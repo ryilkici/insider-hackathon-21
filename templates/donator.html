@@ -1,0 +1,275 @@
+<!-- saved from url=(0090)file:///C:/Users/bagoyem/Desktop/blood-donation-system-main/needyamin/templates/index.html -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+</head>
+
+
+<body>
+{% block content %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Hoşgeldin Recep</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Bağış Miktarı: ₺1207.80 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/"> / <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Eğitimine Katkıda Bulunduğun Kişi Sayısı: 153 <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid mt-3">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+
+
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{{url_for('static', filename='slider1.jpg')}}" height="350px"
+                     alt="First slide">
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <div class="card">
+        <div class="card-body bg-success text-white" style="border-radius: 5px;">
+            <div class="row justify-content-center">
+                <h2>Yaşanabilir Bir Dünya İçin... Bilinçli Nesillerin Yetişmesine Katkıda Bulun.</h2></div>
+        </div>
+    </div>
+
+
+    <div class="row p-1">
+        <div class="col-sm-6">
+
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <img src="{{url_for('static', filename='notice.jpg')}}" class="img-fluid" width="370"></div>
+                </div>
+            </div>
+
+            <div class="p-1"></div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Neden Bağış Gerekli?</h5>
+                    <p class="card-text">Öğrenimin insan davranışlarını etkileyen en önemli faktör olduğunu düşünüyoruz.
+                        Bu yüzden yetişkin bireylerin ve özellikle geleceğimizin teminatı çocuklarımızın sürdürülebilir
+                        kalkınma için gerekli noktaları öğrenmesi ve günlük hayatta bilinçli davranmasını teşvik edecek
+                        bazı ödüllerin bu projeye rağbeti artıracağını ve sürdürülebilir kalkınma hedeflerimize
+                        ulaşabileceğimizi öngörüyoruz.
+                    </p>
+                    <p class="card-text">Yetişkinler ve çocuklar için olmak üzere iki ayrı eğitim paketi hazırladık ve
+                        bu eğitim paketlerine ücretsiz erişim imkanı sağlıyoruz. Yetişkinler kendileri için hazırlanan
+                        sürdürülebilirlik alanındaki birçok farklı konu hakkında bilgi sahibi olabilir ve öğrendiklerini
+                        uygulayabilir. Aynı şekilde aileler de küçük çocukları için hazırladığımız eğlenceli ve öğretici
+                        aynı zamanda güvenli videoları izleterek çocuklarının bilinçli bir şekilde büyümesini ve
+                        öğrendiklerini uygulamasını sağlayabilirler. </p>
+
+
+                    <p class="card-text">
+                        Eğitimlerimizi tamamlayan duyarlı bireylere ve ailelere teşvik amacıyla yapmış olduğunuz
+                        bağışlar sayesinde bir hediye paketi gönderiyoruz. <a></a>
+
+                    </p></div>
+            </div>
+
+
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title" style="font-style: italic;">BAĞIŞ YAP, GELECEĞİ KURTAR</h5>
+
+
+                    <form class="form-horizontal" style="background: skyblue; border-radius: 15px;"
+                          action="file:///C:/blood_database" method="post">
+                        <fieldset>
+
+                            <!-- Form Name -->
+
+                            <!-- Text input-->
+                            <div class="form-group p-1">
+                                <label class="col-md-8 control-label" for="name"
+                                       style="font-style: italic;">İsminiz</label>
+                                <div class="col-md-12">
+                                    <input id="name" name="name" type="text" placeholder=""
+                                           class="form-control input-md" required="">
+
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="email" style="font-style: italic;">Mail
+                                    Adresiniz</label>
+                                <div class="col-md-12">
+                                    <input id="email" name="email" type="text" placeholder=""
+                                           class="form-control input-md" required="">
+
+                                </div>
+                            </div>
+
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="contact" style="font-style: italic;">Telefon
+                                    Numaranız</label>
+                                <div class="col-md-12">
+                                    <input id="number" name="number" type="number" placeholder="Cep Telefonu"
+                                           class="form-control input-md" required="">
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="street" style="font-style: italic;">KART
+                                        ÜZERİNDEKİ İSİM</label>
+                                    <div class="col-md-12">
+                                        <input id="street" name="street" type="text" placeholder=""
+                                               class="form-control input-md" required="">
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-4 control-label" for="area" style="font-style: italic;">KART
+                                        NUMARASI</label>
+                                    <div class="col-md-12">
+                                        <input id="area" name="area" type="text" placeholder="Kart üzerindeki numara"
+                                               class="form-control input-md" required="">
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row md-12 justify-content-center">
+
+
+                                <div class="form-group">
+                                    <label class="col-md-12 control-label" for="contact" style="font-style: italic;">SON
+                                        KULLANMA TARİHİ -AY</label>
+                                    <div class="col-md-12">
+                                        <select id="age" name="age" class="form-control">
+                                            <option>Seçiniz</option>
+                                            <option value="01">01</option>
+                                            <option value="02">02</option>
+                                            <option value="03">03</option>
+                                            <option value="04">04</option>
+                                            <option value="05">05</option>
+                                            <option value="06">06</option>
+                                            <option value="07">07</option>
+                                            <option value="08">08</option>
+                                            <option value="09">09</option>
+                                            <option value="10">10</option>
+                                            <option value="11">11</option>
+                                            <option value="12">12</option>
+
+
+                                        </select>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group ">
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-12 control-label" for="contact"
+                                               style="font-style: italic;">SON KULLANMA TARİHİ -YIL</label>
+                                        <div class="col-md-12">
+                                            <select id="age" name="age" class="form-control">
+                                                <option>Seçiniz</option>
+                                                <option value="2021">2021</option>
+                                                <option value="2022">2022</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2024">2024</option>
+                                                <option value="2025">2025</option>
+                                                <option value="2026">2026</option>
+                                                <option value="2027">2027</option>
+                                                <option value="2028">2028</option>
+                                                <option value="2029">2029</option>
+                                                <option value="2030">2030</option>
+
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <!-- Text input-->
+
+
+                            <!-- Text input-->
+
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="city" style="font-style: italic;">CVV</label>
+                                <div class="col-md-12">
+                                    <input id="city" name="city" type="text" placeholder=""
+                                           class="form-control input-md" required="">
+
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="dist" style="font-style: italic;">Bağış
+                                    Miktarı(₺)</label>
+                                <div class="col-md-12">
+                                    <input id="district" name="district" type="text" placeholder=""
+                                           class="form-control input-md" required="">
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row justify-content-center">
+                                    <input type="submit" name="submit" id="submit" value="ÖDEMEYİ TAMAMLA"
+                                           class="btn btn-primary" style="border-radius: 10px;"></div>
+                            </div>
+
+                            <div class="alert-danger">{{msg}}</div>
+
+                        </fieldset>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    {% endblock %}
+</div>
+</body>
+</html>

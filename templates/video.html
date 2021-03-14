@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Python Flask Bucket List App</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <script>
+    var number = "";
+    var bulbs = [1, 0, 1, 1];
+        function myFunction() {
+
+          document.getElementById("myText").innerHTML = number;
+        }
+
+        function light1(sw) {
+          var pic;
+          if (sw == 0) {
+            bulbs[0] = 0
+            pic = "{{url_for('static', filename='first.jpg')}}"
+          } else {
+            bulbs[0] = 1
+            pic = "{{url_for('static', filename='second.jpg')}}"
+            document.getElementById("myText").innerHTML = "";
+            document.getElementById("mybutton").disabled = true;
+          }
+          document.getElementById('myImage1').src = pic;
+
+          var i;
+          var sum = 0;
+          for (i = 0; i < bulbs.length; i++) {
+            sum += bulbs[i];
+          }
+
+          if(sum==0){
+            document.getElementById("myText").innerHTML = "Aferin!";
+            document.getElementById("mybutton").disabled = false;
+          }
+
+        }
+
+        function light2(sw) {
+          var pic;
+
+          if (sw == 0) {
+            bulbs[1] = 0
+            pic = "{{url_for('static', filename='first.jpg')}}"
+          } else {
+            bulbs[1] = 1
+            pic = "{{url_for('static', filename='second.jpg')}}"
+            document.getElementById("myText").innerHTML = "";
+            document.getElementById("mybutton").disabled = true;
+          }
+          document.getElementById('myImage2').src = pic;
+
+          var i;
+          var sum = 0;
+          for (i = 0; i < bulbs.length; i++) {
+            sum += bulbs[i];
+          }
+
+          if(sum==0){
+            document.getElementById("myText").innerHTML = "Aferin!";
+            document.getElementById("mybutton").disabled = false;
+          }
+        }
+
+        function light3(sw) {
+          var pic;
+          if (sw == 0) {
+            bulbs[2] = 0
+            pic = "{{url_for('static', filename='first.jpg')}}"
+          } else {
+            bulbs[2] = 1
+            pic = "{{url_for('static', filename='second.jpg')}}"
+            document.getElementById("myText").innerHTML = "";
+            document.getElementById("mybutton").disabled = true;
+          }
+          document.getElementById('myImage3').src = pic;
+
+          var i;
+          var sum = 0;
+          for (i = 0; i < bulbs.length; i++) {
+            sum += bulbs[i];
+          }
+
+          if(sum==0){
+            document.getElementById("myText").innerHTML = "Aferin!";
+            document.getElementById("mybutton").disabled = false;
+          }
+        }
+
+        function light4(sw) {
+          var pic;
+          if (sw == 0) {
+            bulbs[3] = 0
+            pic = "{{url_for('static', filename='first.jpg')}}"
+          } else {
+            bulbs[3] = 1
+            pic = "{{url_for('static', filename='second.jpg')}}"
+            document.getElementById("myText").innerHTML = "";
+            document.getElementById("mybutton").disabled = true;
+          }
+          document.getElementById('myImage4').src = pic;
+
+          var i;
+          var sum = 0;
+          for (i = 0; i < bulbs.length; i++) {
+            sum += bulbs[i];
+          }
+
+          if(sum==0){
+            document.getElementById("myText").innerHTML = "Aferin!";
+            document.getElementById("mybutton").disabled = false;
+          }
+        }
+
+
+    </script>
+
+    <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  .column {
+    float: left;
+    width: 25.00%;
+    padding: 5px;
+  }
+
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+    </style>
+
+    <style>
+@import('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.min.css')
+
+.funkyradio div {
+  clear: both;
+  overflow: hidden;
+}
+
+.funkyradio label {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4;
+  font-weight: normal;
+}
+
+.funkyradio input[type="radio"]:empty,
+.funkyradio input[type="checkbox"]:empty {
+  display: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label,
+.funkyradio input[type="checkbox"]:empty ~ label {
+  position: relative;
+  line-height: 2.5em;
+  text-indent: 3.25em;
+  margin-top: 2em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.funkyradio input[type="radio"]:empty ~ label:before,
+.funkyradio input[type="checkbox"]:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 3px 0 0 3px;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
+  color: #888;
+}
+
+.funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
+.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #C2C2C2;
+}
+
+.funkyradio input[type="radio"]:checked ~ label,
+.funkyradio input[type="checkbox"]:checked ~ label {
+  color: #777;
+}
+
+.funkyradio input[type="radio"]:checked ~ label:before,
+.funkyradio input[type="checkbox"]:checked ~ label:before {
+  content: '\2714';
+  text-indent: .9em;
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio input[type="radio"]:focus ~ label:before,
+.funkyradio input[type="checkbox"]:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
+}
+
+.funkyradio-default input[type="radio"]:checked ~ label:before,
+.funkyradio-default input[type="checkbox"]:checked ~ label:before {
+  color: #333;
+  background-color: #ccc;
+}
+
+.funkyradio-primary input[type="radio"]:checked ~ label:before,
+.funkyradio-primary input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+.funkyradio-success input[type="radio"]:checked ~ label:before,
+.funkyradio-success input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5cb85c;
+}
+
+.funkyradio-danger input[type="radio"]:checked ~ label:before,
+.funkyradio-danger input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #d9534f;
+}
+
+.funkyradio-warning input[type="radio"]:checked ~ label:before,
+.funkyradio-warning input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #f0ad4e;
+}
+
+.funkyradio-info input[type="radio"]:checked ~ label:before,
+.funkyradio-info input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #5bc0de;
+}
+
+
+
+    </style>
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Hoşgeldin Recep</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Kazandığın Miktar: ₺2.24 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/"> / <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Tamamladığın Eğitim Paketi Sayısı: 1 <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<br>
+<center><h1>Su Kirliliği</h1></center>
+<div id="video-container">
+    <!-- Video -->
+    <center>
+        <video id="myVid" width="720" height="540" controls>
+            <source src={{ url_for(
+            'static', filename="water-pollution-water-contamination-video-for-kids.mp4") }} type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </center>
+</div>
+<center>
+    <h2>Doğru Soru Sayısı: {{correct_q}} / {{total_q}}</h2>
+    <h2><span id="final"></span></h2>
+</center>
+
+
+</body>
+
+</html>
+
+<script>
+var video = document.getElementById("myVid");
+video.addEventListener("timeupdate", function(){
+    if((this.currentTime >= 3)&&(this.currentTime <= 3.25)) {
+        this.pause();
+        document.getElementById("video-container").innerHTML = '<center> <form action = "http://localhost:5000/videoq1" method = "post"> <h2>Lütfen aşağıdaki soruyu cevaplayın. </h2> <h3>Aşağıdakilerden hangisi kağıt geri dönüşüm kutusuna atılmaz? </h3> <div class="col-md-4" style="float:none;margin:auto;"><div class="col-md-6" style="float:none;margin:auto;"><div class="funkyradio"><div class="funkyradio-primary"><input type="radio" name="q1" id="first" value="first" checked><label for="first">A) Gazete</label></div><div class="funkyradio-success"><input type="radio" name="q1" id="second" value="second" ><label for="second">B) Muz kabuğu </label></div><div class="funkyradio-danger"><input type="radio" name="q1" id="third" value="third" ><label for="third">C) Karton</label></div><div class="funkyradio-warning"><input type="radio" name="q1" id="fourth" value="fourth" ><label for="fourth">D) Defter </label></div></div></div></div><br><br> <input type="submit" class="btn btn-success" value="Gönder"> </form> </center>';
+    }
+});
+
+
+</script>
+
+
+<script>
+var video = document.getElementById("myVid");
+video.addEventListener("timeupdate", function(){
+    if((this.currentTime >= 8)&&(this.currentTime <= 8.25)) {
+        this.pause();
+        document.getElementById("video-container").innerHTML = '<center> <form action = "http://localhost:5000/videoq2" method = "post"> <h2>Lütfen aşağıdaki soruyu cevaplayın. </h2> <h3>Su kirliliği nedir? </h3> <div class="col-md-4" style="float:none;margin:auto;"><div class="col-md-6" style="float:none;margin:auto;"><div class="funkyradio"><div class="funkyradio-primary"><input type="radio" name="q2" id="first" value="first" checked><label for="first">A) Suyun içerisindeki atık madde oranının fazla olmasıdır.</label></div><div class="funkyradio-success"><input type="radio" name="q2" id="second" value="second" ><label for="second">B) Sudaki planktonların fotosentez yapmasıdır. </label></div><div class="funkyradio-danger"><input type="radio" name="q2" id="third" value="third" ><label for="third">C) Balinaların çok fazla küçük balık yemesi sonucu oluşur.</label></div><div class="funkyradio-warning"><input type="radio" name="q2" id="fourth" value="fourth" ><label for="fourth">D) Kuşların sayısının çok artması sebebiyle oluşur.</label></div></div></div></div><br><br> <input type="submit" value="Gönder"> </form> </center>';
+    }
+});
+
+
+</script>
+
+
+<script>
+var video = document.getElementById("myVid");
+video.addEventListener("timeupdate", function(){
+    if((this.currentTime >= 12)&&(this.currentTime <= 12.25)) {
+        this.pause();
+        document.getElementById("video-container").innerHTML = '<center> <form action = "http://localhost:5000/videoq3" method = "post"> <h2>Lütfen aşağıdaki soruyu cevaplayın. </h2> <h3>Hangi yiyeceği fazla tüketmek sağlığa zararlıdır? </h3> <div class="col-md-4" style="float:none;margin:auto;"><div class="col-md-6" style="float:none;margin:auto;"><div class="funkyradio"><div class="funkyradio-primary"><input type="radio" name="q3" id="first" value="first" checked><label for="first">A) Elma</label></div><div class="funkyradio-success"><input type="radio" name="q3" id="second" value="second" ><label for="second">B) Patates Kızartması</label></div><div class="funkyradio-danger"><input type="radio" name="q3" id="third" value="third" ><label for="third">C) Havuç</label></div><div class="funkyradio-warning"><input type="radio" name="q3" id="fourth" value="fourth" ><label for="fourth">D) Domates</label></div></div></div></div><br><br> <input type="submit" class="btn btn-success" value="Gönder"> </form> </center>';
+    }
+});
+
+
+</script>
+
+
+<script>
+var video = document.getElementById("myVid");
+video.addEventListener("timeupdate", function(){
+    if((this.currentTime >= 16)&&(this.currentTime <= 16.25)) {
+        this.pause();
+        document.getElementById("video-container").innerHTML = '<div class="row"><div class="column"><img id="myImage1" src="{{url_for('static', filename='second.jpg')}}" width="100" height="180">  <p><button type="button" onclick="light1(1)">Işığı Aç</button>  <button type="button" onclick="light1(0)">Işığı Kapat</button></p></div><div class="column"><img id="myImage2" src="{{url_for('static', filename='first.jpg')}}" width="100" height="180"><p><button type="button" onclick="light2(1)">Işığı Aç</button>  <button type="button" onclick="light2(0)">Işığı Kapat</button></p>  </div>  <div class="column">  <img id="myImage3" src="{{url_for('static', filename='second.jpg')}}" width="100" height="180">  <p>  <button type="button" onclick="light3(1)">Işığı Aç</button>  <button type="button" onclick="light3(0)">Işığı Kapat</button>  </p>  </div>  <div class="column">  <img id="myImage4" src="{{url_for('static', filename='second.jpg')}}" width="100" height="180">  <p><button type="button" onclick="light4(1)">Işığı Aç</button>  <button type="button" onclick="light4(0)">Işığı Kapat</button>  </p></div>  </div>  <center><form action="http://localhost:5000/videoq4">  <input type="submit" value="Devam Et" id="mybutton" disabled /></form><h2><span id="myText"></span></h2></center>';
+    }
+});
+
+
+</script>
+
+<script>
+var video = document.getElementById("myVid");
+video.addEventListener("timeupdate", function(){
+    if((this.currentTime >= 150)) {
+        document.getElementById("final").innerHTML="Kursu bitirdin! Toplamda soruların %{{(correct_q/(total_q+0.000000000000000000001))*100}} kadarını doğru cevapladın.";
+    }
+});
+
+
+</script>
+
+<script>
+var video = document.getElementById("myVid");
+video.currentTime = {{timeq1}};
+
+
+</script>

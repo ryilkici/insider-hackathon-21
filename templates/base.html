@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <style>
+      img:hover {
+        animation: shake 0.5s;
+        animation-iteration-count: infinite;
+      }
+      
+      @keyframes shake {
+        0% { transform: translate(1px, 1px) rotate(0deg); }
+        10% { transform: translate(-1px, -2px) rotate(-1deg); }
+        20% { transform: translate(-3px, 0px) rotate(1deg); }
+        30% { transform: translate(3px, 2px) rotate(0deg); }
+        40% { transform: translate(1px, -1px) rotate(1deg); }
+        50% { transform: translate(-1px, 2px) rotate(-1deg); }
+        60% { transform: translate(-3px, 1px) rotate(0deg); }
+        70% { transform: translate(3px, 1px) rotate(-1deg); }
+        80% { transform: translate(-1px, -1px) rotate(1deg); }
+        90% { transform: translate(1px, 2px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
+      }
+      </style>
+
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="{{ url_for('static',filename='stylesheet/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='stylesheet/jquery.dataTables.min.css')}}"> 
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+      
+    <!--Bootstrap JSS-->
+    <script src="{{ url_for('static',filename='stylesheet/jquery-3.5.1.js')}}" crossorigin="anonymous"></script>
+     <script src="{{ url_for('static',filename='stylesheet/bootstrap.min.js')}}" crossorigin="anonymous"></script>
+
+  
+<title>Donate Blood and Save lives</title>
+      
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/"><img src="{{ url_for('static',filename='img/logo.png')}}" style="width: 60px; height: 50px;"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/doner">Search Donor</a>
+      </li>
+ 
+           <li class="nav-item">
+        <a class="nav-link" href="/contact_us">Contact US</a>
+      </li>
+        
+      <li class="nav-item">
+        <a class="nav-link" href="/dcma">DCMA</a>
+      </li>
+        
+
+
+      <li class="nav-item">
+        <a class="nav-link disabled" href="/login">Admin</a>
+      </li>
+    </ul>
+  </div>
+</nav>     
+           
+</head>
+    
+    
+<body>
+{% block content %}
+
+{% endblock %}	
+	
+   
+</body>  
+<hr> 
+<div class="text-center py-3 text-white bg-dark">© 2020 Copyright | YAMIN HOSSAIN SHOHAN  </div>    
+     
+<!-- footer core files start-->
+<script>$(document).ready(function() {
+    $('#needyamin_data').DataTable();
+} );</script>
+      
+<script src="{{ url_for('static',filename='stylesheet/jquery.dataTables.min.js')}}" crossorigin="anonymous"></script>
+<!-- footer core files end-->       
+    
+</html>      
+      
